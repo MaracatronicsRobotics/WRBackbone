@@ -32,9 +32,10 @@ int main() {
     CORBAImplementations::Controller controller(&wm, &cb);
     CORBAImplementations::Sensor     sensor(&wm);
     CORBAImplementations::CommandBus commandBus(&cb);
+    CORBAImplementations::RadioSensor radioSensor(&wm);
 
     // Creates and initializes the server
-    Server server(&controller, &sensor, &commandBus);
+    Server server(&controller, &sensor, &radioSensor, &commandBus);
     (void) server.initialize();
 
     // Starts the server
