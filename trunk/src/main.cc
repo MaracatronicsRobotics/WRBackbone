@@ -38,6 +38,8 @@ int main() {
     Server server(&controller, &sensor, &radioSensor, &commandBus);
     (void) server.initialize();
 
+    printf("[WRBACKBONE] Server started!\n");
+
     // Starts the server
     server.start();
 
